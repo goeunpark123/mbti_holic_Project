@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelationshipTabFragment">
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_weight="0.2"
+         android:orientation="horizontal">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:paddingTop="20dp"
+        android:text="MBTI 궁합"
+        android:textSize="40dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+
+        ﻿<Spinner
+        android:id="@+id/spinner_mbti1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
+        android:layout_weight="1" />
+
+
+      <!--<ImageView
+            android:id="@+id/imageViewFlower"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="10dp"
+            android:foregroundGravity="center"
+            android:orientation = "horizontal"
+            android:paddiing="2dp"
+            android:src="@drawable/ic_brightness_high_black_24dp"
+            ></ImageView>
+            -->
+
+
+
+        <Spinner
+            android:id="@+id/spinner_mbti2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation = "horizontal"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/main_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="0dp"
+            android:text="결과 출력" />
+    </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

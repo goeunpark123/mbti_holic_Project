@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HomeTabFragment">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="20dp"
+        android:text="MBTI 16가지 성격유형"
+        android:textAlignment="center"
+        android:textSize="40dp" />
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="40dp"
+
+
+        >
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnISTJ"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#EADDE4"
+
+            android:text="ISTJ" />
+
+        <Button
+            android:id="@+id/btnISFJ"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#EADDE4"
+            android:text="ISFJ" />
+
+        <Button
+            android:id="@+id/btnINFJ"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#EADDE4"
+            android:text="INFJ" />
+
+        <Button
+            android:id="@+id/btnINTJ"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#EADDE4"
+            android:text="INTJ" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnISTP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#E7B8D9"
+            android:text="ISTP" />
+
+        <Button
+            android:id="@+id/btnISFP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#E7B8D9"
+            android:text="ISFP" />
+
+        <Button
+            android:id="@+id/btnINFP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#E7B8D9"
+            android:text="INFP" />
+
+        <Button
+            android:id="@+id/btnINTP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#E7B8D9"
+            android:text="INTP" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnESTP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#ABA4D3"
+
+            android:text="ESTP" />
+
+        <Button
+            android:id="@+id/btnESFP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#ABA4D3"
+            android:text="ESFP" />
+
+        <Button
+            android:id="@+id/btnENFP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#ABA4D3"
+            android:text="ENFP" />
+
+        <Button
+            android:id="@+id/btnENTP"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#ABA4D3"
+            android:text="ENTP" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnESTJ"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#787EA4"
+            android:text="ESTJ" />
+
+        <Button
+            android:id="@+id/btnESFJ"
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:backgroundTint="#787EA4"
+            android:text="ESFJ" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:text="ENFJ"
+            android:backgroundTint="#787EA4"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="88dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/main_item_button"
+            android:text="ENTJ"
+            android:backgroundTint="#787EA4"
+            />
+    </TableRow>
+    </TableLayout>
+</LinearLayout>

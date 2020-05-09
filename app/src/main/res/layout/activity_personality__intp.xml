@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".personality_INTP">
+
+    <TextView
+        android:id="@+id/intp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="INTP"
+        android:textSize="50sp">
+    </TextView>
+    <TabHost
+        android:id="@+id/tabHost1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/intp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- TabWidget의 id값이 반드시 "tabs"로 지정되어야 함. -->
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- FrameLayout의 id값이 반드시 "tabcontent"로 지정되어야 함. -->
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- 성격 페이지 -->
+                <LinearLayout
+                    android:id="@+id/intp_성격"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="500dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/intp_i"/>
+                </LinearLayout>
+
+                <!-- 직업 페이지  -->
+                <LinearLayout
+                    android:id="@+id/intp_직업"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/intp_직업2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:scrollbars="vertical"
+                        android:text="@string/intp_c" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:padding="-30dp">
+
+                <ImageButton
+                    android:id="@+id/imgBtnHome"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="37dp"
+                    android:src="@drawable/newhouse" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnBoard"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="30dp"
+                    android:src="@drawable/newcontract" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnHeart"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="31dp"
+                    android:src="@drawable/newheart" />
+
+                <ImageButton
+                    android:id="@+id/imgBtnMsg"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/newemail" />
+            </LinearLayout>
+        </LinearLayout>
+    </TabHost>
+</RelativeLayout>
