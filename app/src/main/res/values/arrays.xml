@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--파일명은 arrays밖에 안읽음. mbti_arrays는 안읽어 그렇게 쓰믄 안돼-->
+    <string-array name="mbti_type">
+        <item>ISTJ</item>
+        <item>ISFJ</item>
+        <item>INFJ</item>
+        <item>INTJ</item>
+        <item>ISTP</item>
+        <item>ISFP</item>
+        <item>INFP</item>
+        <item>INTP</item>
+        <item>ESTP</item>
+        <item>ESFP</item>
+        <item>ENFP</item>
+        <item>ENTP</item>
+        <item>ESTJ</item>
+        <item>ESFJ</item>
+        <item>ENFJ</item>
+        <item>ENTJ</item>
+    </string-array>
+</resources>

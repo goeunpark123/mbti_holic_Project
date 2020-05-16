@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".Main.MainActivity"
     android:orientation="vertical"
     android:padding="10dp">
 
@@ -177,6 +177,7 @@
             android:backgroundTint="#787EA4"
             android:text="ESFJ" />
         <Button
+            android:id="@+id/btnENFJ"
             android:layout_width="wrap_content"
             android:layout_height="88dp"
             android:layout_marginRight="5dp"
@@ -186,6 +187,7 @@
             android:backgroundTint="#787EA4"
             />
         <Button
+            android:id="@+id/btnENTJ"
             android:layout_width="wrap_content"
             android:layout_height="88dp"
             android:layout_marginRight="5dp"

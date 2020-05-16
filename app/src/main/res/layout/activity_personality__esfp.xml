@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".personality_ESFP">
+    tools:context=".PersonalityMBTI.personality_ESFP">
 
     <TextView
         android:id="@+id/esfp"
@@ -69,43 +69,6 @@
                         android:text="@string/esfp_c" />
                 </LinearLayout>
             </FrameLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                android:padding="-30dp">
-
-                <ImageButton
-                    android:id="@+id/imgBtnHome"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginRight="37dp"
-                    android:src="@drawable/newhouse" />
-
-                <ImageButton
-                    android:id="@+id/imgBtnBoard"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginRight="30dp"
-                    android:src="@drawable/newcontract" />
-
-                <ImageButton
-                    android:id="@+id/imgBtnHeart"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginRight="31dp"
-                    android:src="@drawable/newheart" />
-
-                <ImageButton
-                    android:id="@+id/imgBtnMsg"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:src="@drawable/newemail" />
-            </LinearLayout>
         </LinearLayout>
     </TabHost>
 </RelativeLayout>

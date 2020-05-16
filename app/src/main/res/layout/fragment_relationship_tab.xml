@@ -43,7 +43,8 @@
         android:layout_margin="10dp"
         android:layout_gravity="center_vertical"
         android:padding="10dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:entries="@array/mbti_type"/>
 
 
       <!--<ImageView
@@ -70,7 +71,8 @@
             android:layout_gravity="center_vertical"
             android:padding="10dp"
             android:layout_margin="10dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/mbti_type"/>
     </LinearLayout>
 
     <LinearLayout
@@ -80,12 +82,13 @@
         android:orientation="horizontal"
         android:gravity="center">
         <Button
-            android:id="@+id/main_btn1"
+            android:id="@+id/btn_m_p"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="0dp"
-            android:text="결과 출력" />
+            android:layout_gravity="center"
+            android:text="결과보기"
+            android:textColor="#433535"
+            android:background="#E9E3E2"/>
     </LinearLayout>
     </LinearLayout>
 

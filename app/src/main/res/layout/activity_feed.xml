@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FeedActivity">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/postingList"
+
+     <TextView
+        android:id="@+id/idTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
+        android:layout_centerHorizontal="true"
+        android:text="게시판"></TextView>
+    <!-- 여기에 "내가쓴글"과 "댓글 단 글" 리니어 레이아웃으로 두개 고정으로 넣고, 아래 검색창도 넣고
+    즐겨찾기는 리사이클러뷰 자바 코드에서 어댑터에서 리스트데이터에서 즐겨찾기아이콘 누를때마다 재정렬-->
 
-    </ListView>
-</LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F0F0F0"/>
+    </LinearLayout>

@@ -25,6 +25,7 @@
         >
     <TableRow>
 
+
         <Button
             android:id="@+id/btnISTJ"
             android:layout_width="wrap_content"
@@ -176,6 +177,7 @@
             android:backgroundTint="#787EA4"
             android:text="ESFJ" />
         <Button
+            android:id="@+id/btnENFJ"
             android:layout_width="wrap_content"
             android:layout_height="88dp"
             android:layout_marginRight="5dp"
@@ -185,6 +187,7 @@
             android:backgroundTint="#787EA4"
             />
         <Button
+            android:id="@+id/btnENTJ"
             android:layout_width="wrap_content"
             android:layout_height="88dp"
             android:layout_marginRight="5dp"
