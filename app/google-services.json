@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "127818012396",
+    "firebase_url": "https://mbti-holic-project.firebaseio.com",
+    "project_id": "mbti-holic-project",
+    "storage_bucket": "mbti-holic-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127818012396:android:63d44e0ab7b51eaaadb7c9",
+        "android_client_info": {
+          "package_name": "com.example.mobileprogramming_mbtiholic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127818012396-4td4vnvp4q1tkca4vs067nh1l0mcmjhq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobileprogramming_mbtiholic",
+            "certificate_hash": "7c849992c81a89a8c44dcc8ec0a8ca9ed5c085a2"
+          }
+        },
+        {
+          "client_id": "127818012396-e9m78883ul7tjtr9eatvf989jftp92ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkO9sCfhnj9ty2Ju2j5hbvyUgMzQeF20Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127818012396-e9m78883ul7tjtr9eatvf989jftp92ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
