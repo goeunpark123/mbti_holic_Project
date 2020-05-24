@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemListActivity;
 import com.example.mobileprogramming_mbtiholic.PostPage.Data;
 import com.example.mobileprogramming_mbtiholic.PostPage.Post_ENFJ;
 
@@ -55,9 +56,10 @@ public class PostTabFragment extends Fragment { //덤인데이터
             adapter.setOnItemClickListener(new PostsRecyclerViewAdapter.OnItemClickListener() { // 화면이동
                 @Override
                 public void onClick(View view, int position) { // 한칸 클릭했을때
-                    Intent intent = new Intent(getActivity(), Post_ENFJ.class); // 액티비티 띄우기 전에 만드는 intent
+                    Intent intent = new Intent(getActivity(), PostItemListActivity.class); // 액티비티 띄우기 전에 만드는 intent
                     // intent.putExtra(키 번호,  ) // 다음 activity에서 내가 어디서 온건지도 알아야함
-                    intent.putExtra("user", listData.get(position));
+                    // intent.putExtra("user", listData.get(position));
+                    // TODO 어떤 게시판인지 putExtra로 전달해야 합니다.
                     startActivity(intent);
                 }
 
