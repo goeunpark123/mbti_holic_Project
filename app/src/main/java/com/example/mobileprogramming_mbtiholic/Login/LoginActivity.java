@@ -23,6 +23,8 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
@@ -77,6 +79,13 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            String userId = task.getResult().getUser().getUid();
+                            //파이어베이스 유저 저장하는 코드 작성
+                            FirebaseDatabase database = FirebaseDatabase.getInstance(); // 파이어베이스 객체 가져옴
+                            DatabaseReference user = database.getReference().child("users").child(userId); // 객체 사용, 계층구조
+
+                            user.child("name").setValue("덕복희");
+
 
                         } else {
                             Toast.makeText(LoginActivity.this, "firebase 아이디 생성이 완료되었습니다.",Toast.LENGTH_SHORT).show();
