@@ -19,6 +19,8 @@
         </intent-filter></activity>
         <activity android:name=".Main.MainActivity">
         </activity>
+        <activity android:name=".Activity.mySetting">
+        </activity>
         <activity android:name=".PersonalityMBTI.personality_ENFJ">
         </activity>
         <activity android:name=".PersonalityMBTI.personality_ENTJ">

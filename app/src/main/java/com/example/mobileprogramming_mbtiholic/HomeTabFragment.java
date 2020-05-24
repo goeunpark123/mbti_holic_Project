@@ -27,6 +27,7 @@ import com.example.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISFJ;
 import com.example.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISFP;
 import com.example.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISTJ;
 import com.example.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISTP;
+import com.example.mobileprogramming_mbtiholic.Activity.mySetting;
 
 
 /**
@@ -34,7 +35,7 @@ import com.example.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISTP;
  */
 public class HomeTabFragment extends Fragment implements  View.OnClickListener {
 
-    Button btnenfj,btnenfp,btnentj,btnentp,btnesfj,btnesfp,btnestj,btnestp,btninfj,btninfp,btnintj,btnintp,btnisfj,btnisfp,btnistj,btnistp;
+    Button myBtn,btnenfj,btnenfp,btnentj,btnentp,btnesfj,btnesfp,btnestj,btnestp,btninfj,btninfp,btnintj,btnintp,btnisfj,btnisfp,btnistj,btnistp;
     public HomeTabFragment() {
         // Required empty public constructor
     }
@@ -63,6 +64,10 @@ public class HomeTabFragment extends Fragment implements  View.OnClickListener {
 //                startActivity(intent);
 //            }
 //        });
+
+        myBtn = view.findViewById(R.id.myBtn);
+        myBtn.setOnClickListener(this); // 사용자 설정화면으로 넘어가기
+
         btnenfj = view.findViewById(R.id.btnENFJ);
         btnenfj.setOnClickListener(this); // _1_
 
@@ -117,6 +122,10 @@ public class HomeTabFragment extends Fragment implements  View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.myBtn://사용자 설정화면으로 넘어가기
+                Intent intent_mySetting = new Intent(getActivity(), mySetting.class); // 액티비티 띄우기 전에 만드는 intent
+                startActivity(intent_mySetting);
+                break;
             case R.id.btnENFJ: // _1_
                 Intent intent_enfj = new Intent(getActivity(), personality_ENFJ.class); // 액티비티 띄우기 전에 만드는 intent
                 startActivity(intent_enfj);
