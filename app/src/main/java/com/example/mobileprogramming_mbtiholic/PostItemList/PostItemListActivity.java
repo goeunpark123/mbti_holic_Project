@@ -73,5 +73,6 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
         Intent intent = new Intent(this, PostItemInfoActivity.class);
         intent.putExtra("id", (Long)item.get("id"));
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, android.R.anim.fade_out);
     }
 }

@@ -59,6 +59,12 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(android.R.anim.fade_in, R.anim.slide_out_right);
+    }
+
+    @Override
     public void onRefresh() {
         // TODO Reload ITEM LIST from FIREBASE
 
