@@ -10,7 +10,7 @@ import com.example.mobileprogramming_mbtiholic.R;
 public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //여기에서 시작해서 로그인 했으면 MainTabActivity로 넘어가게 분기를 해줘야된다.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

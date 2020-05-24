@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mobileprogramming_mbtiholic">
-
+    <uses-sdk tools:overrideLibrary="com.google.firebase.auth"/>
     <application
         android:name=".AppAplication"
         android:allowBackup="true"
@@ -53,6 +54,8 @@
         <activity android:name=".RelationshipActivity">
         </activity>
         <activity android:name=".PostPage.Post_ENFJ">
+        </activity>
+        <activity android:name=".Login.LoginActivity">
         </activity>
 
 
