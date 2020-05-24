@@ -54,7 +54,7 @@
         </activity>
         <activity android:name=".PostPage.Post_ENFJ">
         </activity>
-
+        <activity android:name=".PostItemList.PostItemListActivity" />
 
 
     </application>
