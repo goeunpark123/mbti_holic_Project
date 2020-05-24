@@ -12,11 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--이렇게 옮긴다.-->
-        <activity android:name=".Main.MainTabActivity"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        <activity android:name=".Main.MainTabActivity"> </activity>
         <activity android:name=".Main.MainActivity">
         </activity>
         <activity android:name=".Activity.mySetting">
@@ -60,6 +56,12 @@
         <activity android:name=".PostItemList.PostItemListActivity" />
         <activity android:name=".PostItemInfo.PostItemInfoActivity" />
         <activity android:name=".Login.LoginActivity">
+        </activity>
+        <activity android:name=".Loading.LoadingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
     </application>
