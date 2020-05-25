@@ -1,6 +1,8 @@
 package com.example.mobileprogramming_mbtiholic.Activity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,8 +22,17 @@ public class mySetting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mysetting);
 
-        TextView tv1_myInfoText = (TextView) findViewById(R.id.tv1_myInfoText);
-        Button btn1_backBtn = (Button) findViewById(R.id.btn1_backBtn);
+        //액션바 배경색 변경
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF339999));
+        //홈버튼 표시
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //뒤로가기 버튼
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        setTitle("내 정보");
+
         ImageView image1_myMBTIimage = (ImageView) findViewById(R.id.image1_myMBTIimage);
         TextView tv2_myID = (TextView) findViewById(R.id.tv2_myID);
         TextView tv3_myName = (TextView) findViewById(R.id.tv3_myName);
@@ -32,5 +43,16 @@ public class mySetting extends AppCompatActivity {
         ArrayAdapter mbtiAdapter = ArrayAdapter.createFromResource(this, R.array.mbti_type, android.R.layout.simple_spinner_item);
         mbtiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mbtiSpinner.setAdapter(mbtiAdapter);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -9,35 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/topRelativeLayoout" >
-        <TextView
-            android:id="@+id/tv1_myInfoText"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="내 정보"
-            android:textAlignment="center"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textStyle="bold">
-        </TextView>
-
-        <Button
-            android:id="@+id/btn1_backBtn"
-            android:layout_width="36dp"
-            android:layout_height="34dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="108dp"
-            android:layout_marginTop="10dp"
-            android:layout_toLeftOf="@+id/tv1_myInfoText"
-            android:background="@drawable/backbutton_20px" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/secondRelelativeLayout"
-        android:layout_below="@+id/topRelativeLayoout"
         android:background="@drawable/mysetting_layoutborder"
         android:paddingBottom="20dp"
         android:paddingLeft="20dp"
