@@ -8,8 +8,6 @@ import com.google.android.material.tabs.TabLayout;
 
 import android.os.Bundle;
 
-
-
 public class MainTabActivity extends AppCompatActivity {
 
     private MainTabFragmentPagerAdapter mainTabFragmentPagerAdapter;
@@ -23,7 +21,6 @@ public class MainTabActivity extends AppCompatActivity {
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }
-
         mainTabFragmentPagerAdapter = new MainTabFragmentPagerAdapter(getSupportFragmentManager());
 
         ViewPager viewPager = (ViewPager)findViewById(R.id.viewpager);

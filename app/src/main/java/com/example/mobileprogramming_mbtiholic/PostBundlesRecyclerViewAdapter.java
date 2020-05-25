@@ -15,7 +15,6 @@ import com.example.mobileprogramming_mbtiholic.domain.entity.PostBundle;
 
 import java.util.ArrayList;
 
-//어댑터는 같은 폼으로........모르겠어요. 같은 모양으로 여러개 띄우는 애들은 리사이클러뷰.........
 public class PostBundlesRecyclerViewAdapter extends RecyclerView.Adapter<PostBundlesRecyclerViewAdapter.ItemViewHolder> { // 이코드를 확실히 알아야함
 
     private ArrayList<PostBundle> listData ; // 변수는 맘대로 하면 됨 // adapter에 들어갈 list 입니다.
@@ -54,9 +53,6 @@ public class PostBundlesRecyclerViewAdapter extends RecyclerView.Adapter<PostBun
         // RecyclerView가 몇칸을 그려야되는지.. 아이템 한칸한칸일때 몇칸
         return listData.size();
     }
-
-
-
     // RecyclerView의 핵심인 ViewHolder 입니다.
     // 여기서 subView를 setting 해줍니다.
     class ItemViewHolder extends RecyclerView.ViewHolder { // 한칸의 뷰를 만들었을때 거기에 담을 내용. 바인딩 해놓을려고 만드는 함수

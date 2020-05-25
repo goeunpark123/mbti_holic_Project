@@ -48,22 +48,6 @@ public class HomeTabFragment extends Fragment implements  View.OnClickListener {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_home_tab, container, false); // 전체 뷰를 가져옴
-        // 홈메뉴에서 istj버튼 클릭시 istj뷰를 나오게 하기 위해
-//        btnistj.setOnClickListener(new View.OnClickListener() { // 홈메뉴에서 istj버튼 클릭시
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(),personality_ISFJ.class); // 액티비티 띄우기 전에 만드는 intent
-//                startActivity(intent);
-//            }
-//        });
-//        btnentp = view.findViewById(R.id.btnENTP); // 홈메뉴에서 istj버튼 클릭시 istj뷰를 나오게 하기 위해
-//        btnentp.setOnClickListener(new View.OnClickListener() { // 홈메뉴에서 istj버튼 클릭시
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(),personality_ENTP.class); // 액티비티 띄우기 전에 만드는 intent
-//                startActivity(intent);
-//            }
-//        });
 
         myBtn = view.findViewById(R.id.myBtn);
         myBtn.setOnClickListener(this); // 사용자 설정화면으로 넘어가기

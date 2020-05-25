@@ -33,22 +33,16 @@ public class MessageTabFragment extends Fragment { //덤인데이터
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_message, container, false); // 전체 뷰를 가져옴
-        //여기에 recyclerView로 뭐가 뜰건지 다 셋팅 해줘야함
-//        if(adapter== null) {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView); //리사이클러뷰 선어
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity()); // 이 두줄 무조건 쓰고 넘어가야 됨(복붙해서 사용)
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new PostsRecyclerViewAdapter(listData); // 리사이클러뷰의 핵심. 어댑터를 잘 짜는게 핵심이다.......
+        adapter = new PostsRecyclerViewAdapter(listData); // 리사이클러뷰의 핵심. 어댑터를 잘 짜는게 핵심이다
         recyclerView.setAdapter(adapter); // 이 어댑터 써! 하고 셋팅하는 것
         adapter.setOnItemClickListener(new PostsRecyclerViewAdapter.OnItemClickListener() { // 화면이동
             @Override
             public void onClick(View view, int position) { // 한칸 클릭했을때
-                //Intent intent = new Intent(getActivity(), Post_ENFJ.class); // 액티비티 띄우기 전에 만드는 intent
-                // intent.putExtra(키 번호,  ) // 다음 activity에서 내가 어디서 온건지도 알아야함
-//                intent.putExtra("user", listData.get(position));
-//                startActivity(intent);
             }
 
         });
@@ -58,7 +52,7 @@ public class MessageTabFragment extends Fragment { //덤인데이터
 
             }
         });
-        adapter.notifyDataSetChanged(); // 나지금 리스트 추가 아님 삭제 했어!! 알려줌. 그럼 리사이클러뷰가 다시 계산함.......
+        adapter.notifyDataSetChanged(); // 나지금 리스트 추가 아님 삭제 했어!! 알려줌. 그럼 리사이클러뷰가 다시 계산함
 
 //        }
         return view;

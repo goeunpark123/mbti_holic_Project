@@ -16,8 +16,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Random;
-
 public class PostItemWritingActivity extends AppCompatActivity {
     TextView write_title;
     EditText postItem_Write;

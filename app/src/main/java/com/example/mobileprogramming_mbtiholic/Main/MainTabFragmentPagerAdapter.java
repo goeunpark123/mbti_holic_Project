@@ -1,6 +1,5 @@
 package com.example.mobileprogramming_mbtiholic.Main;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -9,7 +8,7 @@ import com.example.mobileprogramming_mbtiholic.HomeTabFragment;
 import com.example.mobileprogramming_mbtiholic.MessageTabFragment;
 import com.example.mobileprogramming_mbtiholic.PostTabFragment;
 import com.example.mobileprogramming_mbtiholic.RelationshipTabFragment;
-import com.example.mobileprogramming_mbtiholic.TestTabFragment;
+import com.example.mobileprogramming_mbtiholic.TestPage.TestTabFragment;
 
 public class MainTabFragmentPagerAdapter extends FragmentPagerAdapter {
 //이렇게 4개를 만든다.

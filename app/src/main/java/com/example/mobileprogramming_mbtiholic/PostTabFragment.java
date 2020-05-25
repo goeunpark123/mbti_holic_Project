@@ -60,7 +60,6 @@ public class PostTabFragment extends Fragment { //덤인데이터
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_feed, container, false); // 전체 뷰를 가져옴
-        //여기에 recyclerView로 뭐가 뜰건지 다 셋팅 해줘야함
 //        if(adapter== null) {
             RecyclerView recyclerView = view.findViewById(R.id.recyclerView); //리사이클러뷰 선어
 
