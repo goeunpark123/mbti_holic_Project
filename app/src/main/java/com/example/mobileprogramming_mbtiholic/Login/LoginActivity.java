@@ -2,12 +2,14 @@ package com.example.mobileprogramming_mbtiholic.Login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobileprogramming_mbtiholic.Main.MainTabActivity;
 import com.example.mobileprogramming_mbtiholic.R;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -66,6 +68,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
+                Log.e("getSignedInAccount", "getSignedInAccount", e);
                 // Google Sign In failed, update UI appropriately
                 // ...
             }
@@ -86,7 +89,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
                             user.child("name").setValue("덕복희");
 
-
+                            Intent intent = new Intent(LoginActivity.this, MainTabActivity.class);
+                            LoginActivity.this.startActivity(intent);
+                            LoginActivity.this.finish();
                         } else {
                             Toast.makeText(LoginActivity.this, "firebase 아이디 생성이 완료되었습니다.",Toast.LENGTH_SHORT).show();
                         }
