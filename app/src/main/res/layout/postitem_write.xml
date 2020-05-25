@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/writingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="글 작성"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/postText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/writingTextView"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="text"
+        android:text="글을 작성하십시오."
+        android:gravity="top"/>
+
+
+    <Button
+        android:id="@+id/writeFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/postText"
+        android:layout_alignRight="@+id/postText"
+        android:text="완료" />
+    <Button
+        android:id="@+id/writeCancle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/postText"
+        android:layout_above="@+id/postText"
+        android:text="X"/>
+</RelativeLayout>
