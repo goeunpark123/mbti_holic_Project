@@ -9,15 +9,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mobileprogramming_mbtiholic.R;
+import com.example.mobileprogramming_mbtiholic.domain.entity.Post;
 
 import java.util.List;
-import java.util.Map;
 
 public class PostItemListRecyclerViewAdapter extends RecyclerView.Adapter<PostItemListRecyclerViewAdapter.ItemViewHolder> {
-    private List<Map<String, Object>> itemList;
+    private List<Post> itemList;
     private OnItemClickListener onItemClickListener;
 
-    public PostItemListRecyclerViewAdapter(List<Map<String, Object>> itemList){
+    public PostItemListRecyclerViewAdapter(List<Post> itemList){
         this.itemList = itemList;
     }
 
@@ -54,10 +54,10 @@ public class PostItemListRecyclerViewAdapter extends RecyclerView.Adapter<PostIt
         ItemViewHolder(View itemView, final OnItemClickListener onItemClickListener) {
             super(itemView);
 
-//            timeTextView = itemView.findViewById(R.id.timeTextView);
-//            contentTextView = itemView.findViewById(R.id.contentTextView);
-//            likeCountTextView = itemView.findViewById(R.id.likeCountTextView);
-//            replyCountTextView = itemView.findViewById(R.id.replyCountTextView);
+            timeTextView = itemView.findViewById(R.id.timeTextView);
+            contentTextView = itemView.findViewById(R.id.contentTextView);
+            likeCountTextView = itemView.findViewById(R.id.likeCountTextView);
+            replyCountTextView = itemView.findViewById(R.id.replyCountTextView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -67,10 +67,13 @@ public class PostItemListRecyclerViewAdapter extends RecyclerView.Adapter<PostIt
             });
         }
 
-        void onBind(Map<String, Object> item, int position) {
+        void onBind(Post post, int position) {
             this.position = position;
 
-            // TODO FILL TEXTVIEW TEXT
+            // TODO timeTextView
+            contentTextView.setText(post.getContent());
+            // TODO likeCountTextView
+            // TODO replyCountTextView
         }
     }
 

@@ -3,19 +3,21 @@ package com.example.mobileprogramming_mbtiholic.PostItemInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView.Adapter;
 import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 import com.example.mobileprogramming_mbtiholic.R;
+import com.example.mobileprogramming_mbtiholic.domain.entity.Post;
+import com.example.mobileprogramming_mbtiholic.domain.entity.Reply;
 
 import java.util.List;
-import java.util.Map;
 
 public class PostItemInfoRecyclerViewAdapter extends Adapter<ViewHolder> {
-    private Map<String, Object> post;
-    private List<Map<String, Object>> replyList;
+    private Post post;
+    private List<Reply> replyList;
     private OnPostLikeClickListener onPostLikeClickListener;
     private OnReplyLikeClickListener onReplyLikeClickListener;
     private OnReplyMenuClickListener onReplyMenuClickListener;
@@ -23,11 +25,11 @@ public class PostItemInfoRecyclerViewAdapter extends Adapter<ViewHolder> {
     private final int ITEM_VIEW_TYPE_POST = 1; // HEADER
     private final int ITEM_VIEW_TYPE_REPLY = 2;
 
-    public PostItemInfoRecyclerViewAdapter(List<Map<String, Object>> replyList){
+    public PostItemInfoRecyclerViewAdapter(List<Reply> replyList){
         this.replyList = replyList;
     }
 
-    public void setPost(Map<String, Object> post) {
+    public void setPost(Post post) {
         this.post = post;
     }
 
@@ -47,7 +49,7 @@ public class PostItemInfoRecyclerViewAdapter extends Adapter<ViewHolder> {
         return position - 1;
     }
 
-    private Map<String, Object> getReplyByPosition(int position) {
+    private Reply getReplyByPosition(int position) {
         int index = getReplyIndexByPosition(position);
         return index >= replyList.size() ? null : replyList.get(index);
     }
@@ -89,7 +91,7 @@ public class PostItemInfoRecyclerViewAdapter extends Adapter<ViewHolder> {
                 ((PostViewHolder)holder).onBind(post);
                 break;
             case ITEM_VIEW_TYPE_REPLY:
-                Map<String, Object> reply = getReplyByPosition(position);
+                Reply reply = getReplyByPosition(position);
                 int replyIndex = getReplyIndexByPosition(position);
                 ((ReplyViewHolder)holder).onBind(reply, replyIndex);
                 break;
@@ -97,15 +99,21 @@ public class PostItemInfoRecyclerViewAdapter extends Adapter<ViewHolder> {
     }
 
     class PostViewHolder extends ViewHolder {
+        private TextView contentTextView;
+
         PostViewHolder(View itemView, final OnPostLikeClickListener onPostLikeClickListener) {
             super(itemView);
 
-            // TODO Bind view
+            contentTextView = (TextView)itemView.findViewById(R.id.contentTextView);
             // TODO onPostLikeClickListener
         }
 
-        void onBind(Map<String, Object> item) {
-            // TODO FILL TEXTVIEW TEXT
+        void onBind(Post item) {
+            if(item == null || item.getId() == null) {
+                return;
+            }
+
+            contentTextView.setText(item.getContent());
         }
     }
 
@@ -120,7 +128,7 @@ public class PostItemInfoRecyclerViewAdapter extends Adapter<ViewHolder> {
             // TODO onReplyMenuClickListener
         }
 
-        void onBind(Map<String, Object> item, int replyIndex) {
+        void onBind(Reply item, int replyIndex) {
             this.replyIndex = replyIndex;
 
             // TODO FILL TEXTVIEW TEXT

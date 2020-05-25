@@ -1,5 +1,6 @@
 package com.example.mobileprogramming_mbtiholic.PostItemList;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +17,13 @@ import android.widget.Toast;
 
 import com.example.mobileprogramming_mbtiholic.PostItemInfo.PostItemInfoActivity;
 import com.example.mobileprogramming_mbtiholic.R;
+import com.example.mobileprogramming_mbtiholic.domain.entity.Post;
+import com.example.mobileprogramming_mbtiholic.domain.entity.PostBundle;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -27,13 +35,18 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
     private SwipeRefreshLayout swipeRefreshLayout;
 
     private PostItemListRecyclerViewAdapter recyclerViewAdapter;
-    private List<Map<String, Object>> itemList = new LinkedList<>();
+    private List<Post> itemList = new LinkedList<>();
+
+    public final static String EXTRA_POST_BUNDLE_ID = "POST_BUNDLE_ID";
+    private String postBundleId;
+    public final static String EXTRA_POST_NAME = "POST_NAME";
+    private String postName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_post_item_list);
 
-        getSupportActionBar().setTitle("ACTIONBAR");
         //액션바 배경색 변경
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF339999));
         //홈버튼 표시
@@ -43,13 +56,16 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        postBundleId = getIntent().getStringExtra(EXTRA_POST_BUNDLE_ID);
+        postName = getIntent().getStringExtra(EXTRA_POST_NAME);
 
-        /*getSupportActionBar().hide();*/
+        if(postBundleId == null || postBundleId.isEmpty() || postName == null || postName.isEmpty()) {
+            Toast.makeText(this, "EXTRA를 확인해주세요.", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
 
-
-        // TODO getIntent().getStringExtra() 를 이용하여 어떤 게시판인지 확인해야합니다.
-
-        setContentView(R.layout.activity_post_item_list);
+        setTitle(postName);
 
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -73,18 +89,23 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
     //액션버튼 메뉴 액션바에 집어 넣기
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.post_item_list_menu, menu);
         return true;
     }
 
     //액션버튼을 클릭했을때의 동작
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-        //or switch문을 이용하면 될듯 하다.
-        if (id == R.id.action_search) {
-            Toast.makeText(this, "검색 클릭", Toast.LENGTH_SHORT).show();
-            return true;
+        switch(item.getItemId()) {
+            case R.id.action_search:
+                Toast.makeText(this, "검색 클릭", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_post_write:
+                Intent intent = new Intent(this, PostItemWritingActivity.class);
+                intent.putExtra(PostItemWritingActivity.EXTRA_POST_BUNDLE_ID, postBundleId);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -94,9 +115,26 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
     public void onRefresh() {
         // TODO Reload ITEM LIST from FIREBASE
 
-        itemList.add(new HashMap<String, Object>());
-        itemList.add(new HashMap<String, Object>());
-        itemList.add(new HashMap<String, Object>());
+        DatabaseReference postsRef = FirebaseDatabase.getInstance().getReference("postBundles").child(postBundleId).child("posts");
+        postsRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                itemList.clear();
+                for(DataSnapshot s : dataSnapshot.getChildren()) {
+                    Post post = s.getValue(Post.class);
+                    post.setId(s.getKey());
+                    itemList.add(post);
+                }
+                if(recyclerViewAdapter != null) {
+                    recyclerViewAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         recyclerViewAdapter.notifyDataSetChanged();
         swipeRefreshLayout.setRefreshing(false);
@@ -104,10 +142,11 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
 
     @Override
     public void onItemClick(View view, int position) {
-        Map<String, Object> item = itemList.get(position);
+        Post item = itemList.get(position);
 
         Intent intent = new Intent(this, PostItemInfoActivity.class);
-        intent.putExtra("id", (Long)item.get("id"));
+        intent.putExtra(PostItemInfoActivity.EXTRA_POST_BUNDLE_ID, postBundleId);
+        intent.putExtra(PostItemInfoActivity.EXTRA_POST_ID, item.getId());
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, android.R.anim.fade_out);
     }

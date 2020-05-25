@@ -1,5 +1,6 @@
 package com.example.mobileprogramming_mbtiholic.PostItemInfo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,6 +14,13 @@ import android.widget.Toast;
 
 import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemListRecyclerViewAdapter;
 import com.example.mobileprogramming_mbtiholic.R;
+import com.example.mobileprogramming_mbtiholic.domain.entity.Post;
+import com.example.mobileprogramming_mbtiholic.domain.entity.Reply;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -24,18 +32,29 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
     private SwipeRefreshLayout swipeRefreshLayout;
 
     private PostItemInfoRecyclerViewAdapter recyclerViewAdapter;
-    private Map<String, Object> post = new HashMap<>();
-    private List<Map<String, Object>> replyList = new LinkedList<>();
+    private Post post = null;
+    private List<Reply> replyList = new LinkedList<>();
+
+    public final static String EXTRA_POST_BUNDLE_ID = "POST_BUNDLE_ID";
+    private String postBundleId;
+    public final static String EXTRA_POST_ID = "POST_ID";
+    private String postId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_post_item_list);
 
         getSupportActionBar().hide();
 
-        // TODO getIntent().getStringExtra() 를 이용하여 어떤 게시판인지 확인해야합니다.
+        postBundleId = getIntent().getStringExtra(EXTRA_POST_BUNDLE_ID);
+        postId = getIntent().getStringExtra(EXTRA_POST_ID);
 
-        setContentView(R.layout.activity_post_item_list);
+        if(postBundleId == null || postBundleId.isEmpty() || postId == null || postId.isEmpty()) {
+            Toast.makeText(this, "게시판 이름이 필요합니다.(EXTRA_POST_NAME)", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
 
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -66,13 +85,27 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
 
     @Override
     public void onRefresh() {
-        // TODO Reload ITEM LIST from FIREBASE
+        DatabaseReference postsRef = FirebaseDatabase.getInstance().getReference("postBundles").child(postBundleId).child("posts").child(postId);
+        postsRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                post = dataSnapshot.getValue(Post.class);
+                post.setId(dataSnapshot.getKey());
+                recyclerViewAdapter.setPost(post);
+                if(recyclerViewAdapter != null) {
+                    recyclerViewAdapter.notifyDataSetChanged();
+                }
+            }
 
-        recyclerViewAdapter.setPost(post);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        replyList.add(new HashMap<String, Object>());
-        replyList.add(new HashMap<String, Object>());
-        replyList.add(new HashMap<String, Object>());
+            }
+        });
+
+        replyList.add(new Reply());
+        replyList.add(new Reply());
+        replyList.add(new Reply());
 
         recyclerViewAdapter.notifyDataSetChanged();
         swipeRefreshLayout.setRefreshing(false);
