@@ -7,8 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.mobileprogramming_mbtiholic.PostItemInfo.PostItemInfoActivity;
 import com.example.mobileprogramming_mbtiholic.R;
@@ -29,7 +33,19 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getSupportActionBar().hide();
+        getSupportActionBar().setTitle("ACTIONBAR");
+        //액션바 배경색 변경
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF339999));
+        //홈버튼 표시
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //뒤로가기 버튼
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+        /*getSupportActionBar().hide();*/
+
 
         // TODO getIntent().getStringExtra() 를 이용하여 어떤 게시판인지 확인해야합니다.
 
@@ -52,6 +68,26 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
         recyclerViewAdapter.setOnItemClickListener(this);
 
         onRefresh();
+    }
+
+    //액션버튼 메뉴 액션바에 집어 넣기
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    //액션버튼을 클릭했을때의 동작
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        //or switch문을 이용하면 될듯 하다.
+        if (id == R.id.action_search) {
+            Toast.makeText(this, "검색 클릭", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
