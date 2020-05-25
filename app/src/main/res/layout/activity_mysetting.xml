@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalityMBTI.personality_ENFJ">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/topRelativeLayoout" >
+        <TextView
+            android:id="@+id/tv1_myInfoText"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="내 정보"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold">
+        </TextView>
+
+        <Button
+            android:id="@+id/btn1_backBtn"
+            android:layout_width="36dp"
+            android:layout_height="34dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="108dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/tv1_myInfoText"
+            android:background="@drawable/backbutton_20px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondRelelativeLayout"
+        android:layout_below="@+id/topRelativeLayoout"
+        android:background="@drawable/mysetting_layoutborder"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <ImageView
+            android:id="@+id/image1_myMBTIimage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30sp"
+            android:background="@drawable/person" />
+
+        <TextView
+            android:id="@+id/tv2_myID"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="id001"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="120dp" />
+
+        <TextView
+            android:id="@+id/tv3_myName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv2_myID"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="10dp"
+            android:text="김나경" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/secondRelelativeLayout"
+        android:layout_marginTop="20dp"
+        android:background = "@drawable/mysetting_layoutborder"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:paddingTop = "20dp"
+        android:paddingBottom="20dp">
+
+        <TextView
+            android:id="@+id/tv4_setMyMBTI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내 MBTI 설정"
+            android:layout_marginLeft="20dp"/>
+
+        <Spinner
+            android:id="@+id/mbtiSpinner"
+            android:layout_width="146dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp" />
+
+        <Button
+            android:id="@+id/btn2_logoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff"
+            />
+    </LinearLayout>
+</RelativeLayout>
