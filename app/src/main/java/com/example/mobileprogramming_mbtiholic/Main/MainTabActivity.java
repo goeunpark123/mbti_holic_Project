@@ -8,6 +8,8 @@ import com.google.android.material.tabs.TabLayout;
 
 import android.os.Bundle;
 
+
+
 public class MainTabActivity extends AppCompatActivity {
 
     private MainTabFragmentPagerAdapter mainTabFragmentPagerAdapter;
@@ -36,6 +38,7 @@ public class MainTabActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setIcon(R.drawable.newcontract);
         tabLayout.getTabAt(2).setIcon(R.drawable.newheart);
         tabLayout.getTabAt(3).setIcon(R.drawable.newemail);
+        tabLayout.getTabAt(4).setIcon(R.drawable.newmbtitest);
 
     }
 }
