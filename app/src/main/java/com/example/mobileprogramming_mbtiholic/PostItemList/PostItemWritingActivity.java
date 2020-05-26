@@ -3,11 +3,13 @@ package com.example.mobileprogramming_mbtiholic.PostItemList;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +30,10 @@ public class PostItemWritingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.postitem_write);
 
+        //액션바 숨기기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+        
         postBundleId = getIntent().getStringExtra(EXTRA_POST_BUNDLE_ID);
 
         if(postBundleId == null || postBundleId.isEmpty()) {

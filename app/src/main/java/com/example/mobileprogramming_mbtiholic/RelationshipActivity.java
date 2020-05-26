@@ -1,8 +1,10 @@
 package com.example.mobileprogramming_mbtiholic;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.Button;
 import android.view.View;
 import android.widget.Spinner;
@@ -21,6 +23,10 @@ public class RelationshipActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relationship_result);
+
+        //액션바 숨기기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Button backBtn = (Button)findViewById(R.id.backBtn);
         text1 = (TextView)findViewById(R.id.text1);
