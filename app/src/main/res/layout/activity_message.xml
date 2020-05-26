@@ -9,7 +9,11 @@
         android:id="@+id/idTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:text="알림판"></TextView>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
