@@ -11,23 +11,18 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#dfe4ed">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:orientation="horizontal">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textAlignment="center"
-                android:paddingTop="20dp"
-                android:text="MBTI 궁합"
-                android:textSize="40dp" />
-
-        </LinearLayout>
+                android:layout_marginTop="40dp"
+                android:text="우리 궁합은"
+                android:textSize="50dp"
+                android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,12 +32,33 @@
             >
         <TextView
             android:id="@+id/text1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="150dp"
+            android:layout_marginTop="80dp"
+            android:text="50%"
+            android:textColor="#787EA4"/>
+
         <TextView
             android:id="@+id/text2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="잘 맞는것도 아닌것도 아닌 애매한 관계"
+            />
+
+         <Button
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="다시하기"
+             android:background="#ffffff"/>
 
 
         </LinearLayout>

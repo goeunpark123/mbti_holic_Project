@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Random;
 
 public class RelationshipActivity extends AppCompatActivity {
 
-    TextView text1;
-    TextView text2;
+    TextView text1, text2, mbtiText1, mbtiText2;
     Random rand = new Random();
 
     @Override
@@ -20,11 +20,13 @@ public class RelationshipActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relationship_result);
 
+        Button backBtn = (Button)findViewById(R.id.backBtn);
         text1 = (TextView)findViewById(R.id.text1);
         text2 = (TextView)findViewById(R.id.text2);
 
-        int num = rand.nextInt(3);
+        int num = rand.nextInt(4);
 
+        // 난수 생성 코드
         switch (num) {
             case 0:
                 text1.setText(" 25% ");
