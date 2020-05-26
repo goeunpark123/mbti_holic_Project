@@ -18,13 +18,15 @@ tools:context=".HomeTabFragment">
         android:layout_gravity="center"
         android:paddingTop="20dp"
         android:text="MBTI 16가지 성격유형"
+        android:textColor="#787EA4"
         android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/myBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/ic_person_black_24dp"
