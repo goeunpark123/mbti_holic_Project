@@ -1,27 +1,29 @@
-package com.example.mobileprogramming_mbtiholic;
+package com.example.mobileprogramming_mbtiholic.PostPage;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.mobileprogramming_mbtiholic.PostPage.Data;
+import com.example.mobileprogramming_mbtiholic.R;
+import com.example.mobileprogramming_mbtiholic.domain.entity.PostBundle;
 
 import java.util.ArrayList;
 
-public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecyclerViewAdapter.ItemViewHolder> { // 이코드를 확실히 알아야함
+public class PostBundlesRecyclerViewAdapter extends RecyclerView.Adapter<PostBundlesRecyclerViewAdapter.ItemViewHolder> { // 이코드를 확실히 알아야함
 
-    private ArrayList<Data> listData ; // 변수는 맘대로 하면 됨 // adapter에 들어갈 list 입니다.
+    private ArrayList<PostBundle> listData ; // 변수는 맘대로 하면 됨 // adapter에 들어갈 list 입니다.
     private OnItemClickListener onItemClickListener;
     private  OnItemPinClickListener onItemPinClickListener;
 
-   public PostsRecyclerViewAdapter(ArrayList<Data> listData){
-       this.listData = listData;
-   }
+    public PostBundlesRecyclerViewAdapter(ArrayList<PostBundle> listData){
+        this.listData = listData;
+    }
 
     public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
         this.onItemClickListener = onItemClickListener;
@@ -51,7 +53,8 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
         // RecyclerView가 몇칸을 그려야되는지.. 아이템 한칸한칸일때 몇칸
         return listData.size();
     }
-
+    // RecyclerView의 핵심인 ViewHolder 입니다.
+    // 여기서 subView를 setting 해줍니다.
     class ItemViewHolder extends RecyclerView.ViewHolder { // 한칸의 뷰를 만들었을때 거기에 담을 내용. 바인딩 해놓을려고 만드는 함수
 
         private TextView textView1;
@@ -81,12 +84,12 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
 
         }
 
-        void onBind(Data data, int position) { // 만들고 싶은 함수를 만듦. 중요한건 밖에서부터 매게변수를 받아서 setText, setImageResoure를 하려는 것.
+        void onBind(PostBundle postBundle, int position) { // 만들고 싶은 함수를 만듦. 중요한건 밖에서부터 매게변수를 받아서 setText, setImageResoure를 하려는 것.
             this.position = position;
-            textView1.setText(data.getTitle());
-            textView2.setText(data.getContent());
+            textView1.setText(postBundle.getName());
+            textView2.setText(postBundle.getExplain());
             //imageView.setImageResource(data.getResId());
-            Glide.with(itemView).load(data.getResId()).into(imageView); // 앞으로 이미지 넣을때 이 코드로 넣어야 메모리가 관리된다.
+            Glide.with(itemView).load(R.drawable.feed_icon).into(imageView); // 앞으로 이미지 넣을때 이 코드로 넣어야 메모리가 관리된다.
         }
     }
 

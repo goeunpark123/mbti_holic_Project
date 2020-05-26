@@ -9,8 +9,12 @@
         android:id="@+id/idTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="게시판"></TextView>
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:text="게시판"
+        android:textSize="20dp"
+        android:textStyle="bold"></TextView>
     <!-- 여기에 "내가쓴글"과 "댓글 단 글" 리니어 레이아웃으로 두개 고정으로 넣고, 아래 검색창도 넣고
     즐겨찾기는 리사이클러뷰 자바 코드에서 어댑터에서 리스트데이터에서 즐겨찾기아이콘 누를때마다 재정렬-->
 

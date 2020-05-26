@@ -1,7 +1,6 @@
 package com.example.mobileprogramming_mbtiholic;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,11 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mobileprogramming_mbtiholic.PostPage.Data;
-import com.example.mobileprogramming_mbtiholic.PostPage.Post_ENFJ;
+import com.example.mobileprogramming_mbtiholic.PostPage.PostsRecyclerViewAdapter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 /**

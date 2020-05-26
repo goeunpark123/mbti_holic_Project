@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.mobileprogramming_mbtiholic.HomeTabFragment;
 import com.example.mobileprogramming_mbtiholic.MessageTabFragment;
-import com.example.mobileprogramming_mbtiholic.PostTabFragment;
+import com.example.mobileprogramming_mbtiholic.PostPage.PostTabFragment;
 import com.example.mobileprogramming_mbtiholic.RelationshipTabFragment;
 import com.example.mobileprogramming_mbtiholic.TestPage.TestTabFragment;
 

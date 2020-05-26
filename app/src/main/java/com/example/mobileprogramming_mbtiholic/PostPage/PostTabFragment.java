@@ -1,4 +1,4 @@
-package com.example.mobileprogramming_mbtiholic;
+package com.example.mobileprogramming_mbtiholic.PostPage;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemListActivity;
+import com.example.mobileprogramming_mbtiholic.R;
 import com.example.mobileprogramming_mbtiholic.domain.entity.PostBundle;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

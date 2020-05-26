@@ -39,7 +39,7 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_margin="20dp"
-        android:src="@drawable/feed_star"/>
+        android:src="@drawable/feed_icon"/>
 
 
 </LinearLayout>

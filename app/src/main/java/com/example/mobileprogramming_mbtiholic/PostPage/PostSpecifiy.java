@@ -15,7 +15,6 @@ import android.view.View;
 
 import com.example.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISFJ;
 import com.example.mobileprogramming_mbtiholic.R;
-import com.example.mobileprogramming_mbtiholic.PostsRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,7 +24,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Post_ENFJ extends AppCompatActivity { //덤인데이터
+public class PostSpecifiy extends AppCompatActivity { //덤인데이터
     private PostsRecyclerViewAdapter adapter;
     GestureDetector gestureDetector;
     private ArrayList<Data> listData = new ArrayList<>(); // 변수는 맘대로 하면 됨
@@ -42,7 +41,7 @@ public class Post_ENFJ extends AppCompatActivity { //덤인데이터
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView); //리사이클러뷰 선어
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Post_ENFJ.this); // 이 두줄 무조건 쓰고 넘어가야 됨(복붙해서 사용)
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(PostSpecifiy.this); // 이 두줄 무조건 쓰고 넘어가야 됨(복붙해서 사용)
         recyclerView.setLayoutManager(linearLayoutManager);
 
         adapter = new PostsRecyclerViewAdapter(listData); // 리사이클러뷰의 핵심. 어댑터를 잘 짜는게 핵심이다.......
@@ -50,7 +49,7 @@ public class Post_ENFJ extends AppCompatActivity { //덤인데이터
         adapter.setOnItemClickListener(new PostsRecyclerViewAdapter.OnItemClickListener() { // 화면이동
             @Override
             public void onClick(View view, int position) { // 한칸 클릭했을때
-                Intent intent = new Intent(Post_ENFJ.this, personality_ISFJ.class); // 액티비티 띄우기 전에 만드는 intent
+                Intent intent = new Intent(PostSpecifiy.this, personality_ISFJ.class); // 액티비티 띄우기 전에 만드는 intent
                 // intent.putExtra(키 번호,  ) // 다음 activity에서 내가 어디서 온건지도 알아야함
                 intent.putExtra("user", listData.get(position));
                 startActivity(intent);
@@ -101,7 +100,7 @@ public class Post_ENFJ extends AppCompatActivity { //덤인데이터
 
         );
         List<Integer> listResId = Arrays.asList(
-                R.drawable.feed_star
+                R.drawable.feed_icon
         );
         for (int i = 0; i < listTitle.size(); i++) {
             // 각 List의 값들을 data 객체에 set 해줍니다.
