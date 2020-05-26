@@ -5,4 +5,11 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorButtonPink">#F8E0F7</color>
     <color name="colorButtonGray">#D8D8D8</color>
+    
+    <color name="sky">#DCF4F5</color>
+    <color name="skygreen">#ACE0DD</color>
+    <color name="candypink">#FA6690</color>
+    <color name="pink">#FEC0CF</color>
+    <color name="babypink">#FEEBF2</color>
+    <color name="brown">#AE7F6C</color>
 </resources>
