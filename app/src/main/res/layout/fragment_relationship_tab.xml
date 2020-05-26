@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RelationshipTabFragment">
 
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -25,55 +24,116 @@
         android:textAlignment="center"
         android:paddingTop="20dp"
         android:text="MBTI 궁합"
-        android:textSize="40dp" />
+        android:textColor="#787EA4"
+        android:textSize="40dp"
+        android:textStyle="bold"/>
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="horizontal"
         >
 
-        ﻿<Spinner
-        android:id="@+id/spinner_mbti1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_gravity="center_vertical"
-        android:padding="10dp"
-        android:layout_weight="1"
-        android:entries="@array/mbti_type"/>
-
-
-      <!--<ImageView
-            android:id="@+id/imageViewFlower"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_gravity="center_vertical"
-            android:layout_margin="10dp"
-            android:foregroundGravity="center"
-            android:orientation = "horizontal"
-            android:paddiing="2dp"
-            android:src="@drawable/ic_brightness_high_black_24dp"
-            ></ImageView>
-            -->
+            android:layout_marginStart="54dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/person2" />
+
+        <!--<ImageView
+              android:id="@+id/imageViewFlower"
+              android:layout_width="60dp"
+              android:layout_height="60dp"
+              android:layout_weight="1"
+              android:layout_gravity="center_vertical"
+              android:layout_margin="10dp"
+              android:foregroundGravity="center"
+              android:orientation = "horizontal"
+              android:paddiing="2dp"
+              android:src="@drawable/ic_brightness_high_black_24dp"
+              ></ImageView>
+              -->
 
 
+        <Spinner
+            android:id="@+id/spinner_mbti1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="54dp"
+            android:layout_marginLeft="54dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="35dp"
+            android:entries="@array/mbti_type"
+            android:orientation="horizontal"
+            android:padding="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="97dp"
+            android:layout_marginLeft="97dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginBottom="35dp"
+            android:text="나"
+            android:textColor="#787EA4"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="263dp"
+            android:layout_marginLeft="263dp"
+            android:layout_marginBottom="35dp"
+            android:background="@drawable/person2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="294dp"
+            android:layout_marginLeft="294dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginBottom="35dp"
+            android:text="상대방"
+            android:textSize="15dp"
+            android:textColor="#787EA4"/>
 
         <Spinner
             android:id="@+id/spinner_mbti2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation = "horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_gravity="center_vertical"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:entries="@array/mbti_type"/>
-    </LinearLayout>
+            android:layout_marginTop="200dp"
+            android:layout_marginStart="263dp"
+            android:layout_marginLeft="263dp"
+            android:layout_marginBottom="35dp"
+            android:entries="@array/mbti_type"
+            android:orientation="horizontal"
+            android:padding="10dp" />
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

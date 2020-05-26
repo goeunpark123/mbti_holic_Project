@@ -32,10 +32,10 @@ public class MainTabActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_home_black_24dp);
-        tabLayout.getTabAt(1).setIcon(R.drawable.newcontract);
-        tabLayout.getTabAt(2).setIcon(R.drawable.newheart);
-        tabLayout.getTabAt(3).setIcon(R.drawable.newemail);
-        tabLayout.getTabAt(4).setIcon(R.drawable.newmbtitest);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_library_books);
+        tabLayout.getTabAt(2).setIcon(R.drawable.heart);
+        tabLayout.getTabAt(3).setIcon(R.drawable.ic_mail_outline);
+        tabLayout.getTabAt(4).setIcon(R.drawable.ic_check);
 
     }
 }
