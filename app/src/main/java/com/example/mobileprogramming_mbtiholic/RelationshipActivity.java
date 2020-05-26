@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemWritingActivity;
+
 import java.util.Random;
 
 public class RelationshipActivity extends AppCompatActivity {
@@ -45,6 +47,13 @@ public class RelationshipActivity extends AppCompatActivity {
                 text2.setText(" 만나자마자 짱친! 뭘하던 친구가 되는 최고의 관계 ");
                 break;
         }
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RelationshipActivity.this.finish();
+            }
+        });
     }
 
 
