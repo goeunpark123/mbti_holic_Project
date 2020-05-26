@@ -48,7 +48,7 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
         setContentView(R.layout.activity_post_item_list);
 
         //액션바 배경색 변경
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF339999));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFEC0CF));
         //홈버튼 표시
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
