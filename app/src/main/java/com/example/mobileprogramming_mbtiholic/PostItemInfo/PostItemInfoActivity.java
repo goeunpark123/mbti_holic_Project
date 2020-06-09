@@ -8,11 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemListRecyclerViewAdapter;
+import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemWritingActivity;
 import com.example.mobileprogramming_mbtiholic.R;
 import com.example.mobileprogramming_mbtiholic.domain.entity.Post;
 import com.example.mobileprogramming_mbtiholic.domain.entity.Reply;
@@ -45,7 +48,13 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_item_list);
 
-        getSupportActionBar().hide();
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //액션바 배경색 변경
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFEC0CF));
+        //홈버튼 표시
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //뒤로가기 버튼
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         postBundleId = getIntent().getStringExtra(EXTRA_POST_BUNDLE_ID);
         postId = getIntent().getStringExtra(EXTRA_POST_ID);
@@ -55,6 +64,7 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
             finish();
             return;
         }
+        setTitle("");
 
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -81,6 +91,17 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(android.R.anim.fade_in, R.anim.slide_out_right);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home: { //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
