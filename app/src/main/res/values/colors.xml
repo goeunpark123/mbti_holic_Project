@@ -5,7 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorButtonPink">#F8E0F7</color>
     <color name="colorButtonGray">#D8D8D8</color>
-    
+
+    <color name="purple">#ECE0F8</color>
+    <color name="darkpurple">#D0A9F5</color>
     <color name="sky">#DCF4F5</color>
     <color name="skygreen">#ACE0DD</color>
     <color name="candypink">#FA6690</color>

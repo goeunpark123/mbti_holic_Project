@@ -3,36 +3,25 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="나는 과연 어떤 유형일까?"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="33dp"
-        android:textStyle="bold" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="wrap_content"
-        android:layout_height="350dp"
-        android:src="@drawable/testpicture" />
-
-    <Button
-        android:id="@+id/btnTest"
-        android:layout_width="370dp"
-        android:layout_height="116dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:background="#dad9ff"
-        android:fontFamily="monospace"
-        android:text="mbti유형 검사하러 GO!"
-        android:textColor="#ffffff"
-        android:textSize="30dp" />
-
+        android:background="@color/purple">
+        <TextView
+            android:id="@+id/idTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:text="MBTI 검사"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </WebView>
 
 </LinearLayout>

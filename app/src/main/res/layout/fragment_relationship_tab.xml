@@ -12,24 +12,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-     <LinearLayout
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:layout_weight="0.2"
-         android:orientation="horizontal">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:paddingTop="20dp"
-        android:text="MBTI 궁합"
-        android:textColor="#787EA4"
-        android:textSize="40dp"
-        android:textStyle="bold"/>
-
-    </LinearLayout>
-
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple">
+            <TextView
+                android:id="@+id/idTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:text="MBTI 궁합 테스트"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+        </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -86,7 +86,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             //파이어베이스 유저 저장하는 코드 작성
                             FirebaseDatabase database = FirebaseDatabase.getInstance(); // 파이어베이스 객체 가져옴
                             DatabaseReference user = database.getReference().child("users").child(userId); // 객체 사용, 계층구조
-
+                            
                             user.child("name").setValue("덕복희");
 
                             Intent intent = new Intent(LoginActivity.this, MainTabActivity.class);
@@ -101,6 +101,9 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 });
     }
 
+    private void signOut() {
+        FirebaseAuth.getInstance().signOut();
+    }
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
