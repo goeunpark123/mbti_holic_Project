@@ -11,17 +11,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mobileprogramming_mbtiholic.R;
-import com.example.mobileprogramming_mbtiholic.domain.entity.PostBundle;
+import com.example.mobileprogramming_mbtiholic.domain.entity.PostItem;
 
 import java.util.ArrayList;
 
 public class PostBundlesRecyclerViewAdapter extends RecyclerView.Adapter<PostBundlesRecyclerViewAdapter.ItemViewHolder> { // 이코드를 확실히 알아야함
 
-    private ArrayList<PostBundle> listData ; // 변수는 맘대로 하면 됨 // adapter에 들어갈 list 입니다.
+    private ArrayList<PostItem> listData ; // 변수는 맘대로 하면 됨 // adapter에 들어갈 list 입니다.
     private OnItemClickListener onItemClickListener;
     private  OnItemPinClickListener onItemPinClickListener;
 
-    public PostBundlesRecyclerViewAdapter(ArrayList<PostBundle> listData){
+    public PostBundlesRecyclerViewAdapter(ArrayList<PostItem> listData){
         this.listData = listData;
     }
 
@@ -38,7 +38,7 @@ public class PostBundlesRecyclerViewAdapter extends RecyclerView.Adapter<PostBun
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) { // 뷰 한칸(라인한줄) 만드는 코드. 데이터를 넣는게 아니라 뷰만 넣음
         // LayoutInflater를 이용하여 전 단계에서 만들었던 item.xml을 inflate 시킵니다.
         // return 인자는 ViewHolder 입니다.
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_item, parent, false); // feed_item이 한칸의 xml임. 이 xml로 한칸을 구현하면 됨
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_each, parent, false); // feed_item이 한칸의 xml임. 이 xml로 한칸을 구현하면 됨
         return new ItemViewHolder(view, onItemClickListener, onItemPinClickListener);
     } // 한 사이클을 넘어가면 뷰는 재사용한다.
 
@@ -84,10 +84,10 @@ public class PostBundlesRecyclerViewAdapter extends RecyclerView.Adapter<PostBun
 
         }
 
-        void onBind(PostBundle postBundle, int position) { // 만들고 싶은 함수를 만듦. 중요한건 밖에서부터 매게변수를 받아서 setText, setImageResoure를 하려는 것.
+        void onBind(PostItem postItem, int position) { // 만들고 싶은 함수를 만듦. 중요한건 밖에서부터 매게변수를 받아서 setText, setImageResoure를 하려는 것.
             this.position = position;
-            textView1.setText(postBundle.getName());
-            textView2.setText(postBundle.getExplain());
+            textView1.setText(postItem.getName());
+            textView2.setText(postItem.getExplain());
             //imageView.setImageResource(data.getResId());
             Glide.with(itemView).load(R.drawable.feed_icon).into(imageView); // 앞으로 이미지 넣을때 이 코드로 넣어야 메모리가 관리된다.
         }

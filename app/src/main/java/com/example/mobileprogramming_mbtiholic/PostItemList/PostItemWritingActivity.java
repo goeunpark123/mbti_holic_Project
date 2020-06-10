@@ -3,7 +3,6 @@ package com.example.mobileprogramming_mbtiholic.PostItemList;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,7 +27,7 @@ public class PostItemWritingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.postitem_write);
+        setContentView(R.layout.post_item_each_write);
 
         //액션바 숨기기
         ActionBar actionBar = getSupportActionBar();

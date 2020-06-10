@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemListActivity;
 import com.example.mobileprogramming_mbtiholic.R;
-import com.example.mobileprogramming_mbtiholic.domain.entity.PostBundle;
+import com.example.mobileprogramming_mbtiholic.domain.entity.PostItem;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class PostTabFragment extends Fragment { //덤인데이터
     private PostBundlesRecyclerViewAdapter adapter;
-    private ArrayList<PostBundle> listData = new ArrayList<>(); // 변수는 맘대로 하면 됨
+    private ArrayList<PostItem> listData = new ArrayList<>(); // 변수는 맘대로 하면 됨
     public PostTabFragment() {
         // Required empty public constructor
     }
@@ -41,9 +41,9 @@ public class PostTabFragment extends Fragment { //덤인데이터
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listData.clear();
                 for(DataSnapshot s : dataSnapshot.getChildren()) {
-                    PostBundle postBundle = s.getValue(PostBundle.class);
-                    postBundle.setId(s.getKey());
-                    listData.add(postBundle);
+                    PostItem postItem = s.getValue(PostItem.class);
+                    postItem.setId(s.getKey());
+                    listData.add(postItem);
                 }
                 if(adapter != null) {
                     adapter.notifyDataSetChanged();
@@ -60,7 +60,7 @@ public class PostTabFragment extends Fragment { //덤인데이터
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_feed, container, false); // 전체 뷰를 가져옴
+        View view = inflater.inflate(R.layout.post, container, false); // 전체 뷰를 가져옴
 //        if(adapter== null) {
             RecyclerView recyclerView = view.findViewById(R.id.recyclerView); //리사이클러뷰 선어
 

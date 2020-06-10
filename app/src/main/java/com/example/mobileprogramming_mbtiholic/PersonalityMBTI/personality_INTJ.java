@@ -14,7 +14,7 @@ public class personality_INTJ extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personality__intj);
+        setContentView(R.layout.z_personality__intj);
 
         TabHost tabHost1 = (TabHost) findViewById(R.id.tabHost1);
         tabHost1.setup();

@@ -18,17 +18,14 @@ import android.widget.Toast;
 import com.example.mobileprogramming_mbtiholic.PostItemInfo.PostItemInfoActivity;
 import com.example.mobileprogramming_mbtiholic.R;
 import com.example.mobileprogramming_mbtiholic.domain.entity.Post;
-import com.example.mobileprogramming_mbtiholic.domain.entity.PostBundle;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 public class PostItemListActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener, PostItemListRecyclerViewAdapter.OnItemClickListener {
     // views
@@ -45,7 +42,7 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post_item_list);
+        setContentView(R.layout.post_item_list);
 
         //액션바 배경색 변경
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFEC0CF));

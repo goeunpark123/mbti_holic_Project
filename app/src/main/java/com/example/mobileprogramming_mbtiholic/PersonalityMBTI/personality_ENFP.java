@@ -14,7 +14,7 @@ public class personality_ENFP extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personaltiy__enfp);
+        setContentView(R.layout.z_personaltiy__enfp);
 
         TabHost tabHost1 = (TabHost) findViewById(R.id.tabHost1);
         tabHost1.setup();

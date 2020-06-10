@@ -14,7 +14,7 @@ public class personality_ESTP extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personality__estp);
+        setContentView(R.layout.z_personality__estp);
 
         TabHost tabHost1 = (TabHost) findViewById(R.id.tabHost1);
         tabHost1.setup();

@@ -34,7 +34,7 @@ public class PostSpecifiy extends AppCompatActivity { //덤인데이터
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed);
+        setContentView(R.layout.post);
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }

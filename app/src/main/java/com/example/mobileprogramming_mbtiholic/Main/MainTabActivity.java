@@ -15,7 +15,7 @@ public class MainTabActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_tab);
+        setContentView(R.layout.z_main_tab);
 
         //액션바 숨기는 코드
         if(getSupportActionBar()!=null){

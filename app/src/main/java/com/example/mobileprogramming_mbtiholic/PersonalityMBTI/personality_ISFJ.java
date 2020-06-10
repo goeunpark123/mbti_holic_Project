@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.mobileprogramming_mbtiholic.R;
 
@@ -15,7 +14,7 @@ public class personality_ISFJ extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_personality__isfj);
+        setContentView(R.layout.z_personality__isfj);
 
 
 

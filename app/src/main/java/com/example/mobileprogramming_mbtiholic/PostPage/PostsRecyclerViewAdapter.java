@@ -36,7 +36,7 @@ public class PostsRecyclerViewAdapter extends RecyclerView.Adapter<PostsRecycler
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) { // 뷰 한칸(라인한줄) 만드는 코드. 데이터를 넣는게 아니라 뷰만 넣음
         // LayoutInflater를 이용하여 전 단계에서 만들었던 item.xml을 inflate 시킵니다.
         // return 인자는 ViewHolder 입니다.
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_item, parent, false); // feed_item이 한칸의 xml임. 이 xml로 한칸을 구현하면 됨
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.post_each, parent, false); // feed_item이 한칸의 xml임. 이 xml로 한칸을 구현하면 됨
         return new ItemViewHolder(view, onItemClickListener, onItemPinClickListener);
     } // 한 사이클을 넘어가면 뷰는 재사용한다.
 

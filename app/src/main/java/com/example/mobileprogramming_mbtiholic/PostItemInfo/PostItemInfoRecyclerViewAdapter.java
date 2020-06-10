@@ -70,12 +70,12 @@ public class PostItemInfoRecyclerViewAdapter extends Adapter<ViewHolder> {
         switch (viewType) {
             case ITEM_VIEW_TYPE_POST:
                 return new PostViewHolder(
-                        LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_post_item_info_post, parent, false),
+                        LayoutInflater.from(parent.getContext()).inflate(R.layout.post_item_each, parent, false),
                         onPostLikeClickListener
                 );
             case ITEM_VIEW_TYPE_REPLY:
                 return new ReplyViewHolder(
-                        LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_post_item_info_reply, parent, false),
+                        LayoutInflater.from(parent.getContext()).inflate(R.layout.post_item_reply_each, parent, false),
                         onReplyLikeClickListener,
                         onReplyMenuClickListener
                 );

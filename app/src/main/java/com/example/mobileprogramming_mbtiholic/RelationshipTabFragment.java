@@ -24,7 +24,7 @@ public class RelationshipTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_relationship_tab, container, false); // 전체 뷰를 가져옴
+        View view = inflater.inflate(R.layout.relationship, container, false); // 전체 뷰를 가져옴
         // 홈메뉴에서 istj버튼 클릭시 istj뷰를 나오게 하기 위해
         spinner1 = (Spinner) view.findViewById(R.id.spinner_mbti1);
         spinner2 = (Spinner) view.findViewById(R.id.spinner_mbti1);

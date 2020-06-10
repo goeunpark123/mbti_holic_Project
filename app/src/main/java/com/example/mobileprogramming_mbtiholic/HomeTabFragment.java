@@ -47,7 +47,7 @@ public class HomeTabFragment extends Fragment implements  View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_home_tab, container, false); // 전체 뷰를 가져옴
+        View view = inflater.inflate(R.layout.home_new, container, false); // 전체 뷰를 가져옴
 
         myBtn = view.findViewById(R.id.myBtn);
         myBtn.setOnClickListener(this); // 사용자 설정화면으로 넘어가기

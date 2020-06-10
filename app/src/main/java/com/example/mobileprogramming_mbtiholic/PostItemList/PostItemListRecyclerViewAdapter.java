@@ -29,7 +29,7 @@ public class PostItemListRecyclerViewAdapter extends RecyclerView.Adapter<PostIt
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new ItemViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_view_post_item_list, parent, false),
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.post_item_list_each, parent, false),
                 onItemClickListener
         );
     }
