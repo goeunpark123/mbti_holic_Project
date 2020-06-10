@@ -1,9 +1,7 @@
 package com.example.mobileprogramming_mbtiholic;
-
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mobileprogramming_mbtiholic.RelationshipTabFragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
@@ -11,15 +9,10 @@ import android.widget.Button;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.example.mobileprogramming_mbtiholic.PostItemList.PostItemWritingActivity;
-
 import java.util.Random;
-
 public class RelationshipActivity extends AppCompatActivity {
-
     TextView text1, text2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +33,7 @@ public class RelationshipActivity extends AppCompatActivity {
         //case4만들기
         switch (relationResult) {
             case 1:
-                text1.setText(" 00% ");
+                text1.setText(" 0% ");
                 text2.setText(" 궁합 최악! 서로 많이 노력해보아요 ");
                 break;
             case 2:
