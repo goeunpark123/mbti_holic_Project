@@ -3,6 +3,7 @@ package com.example.mobileprogramming_mbtiholic.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,35 +15,32 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import com.example.mobileprogramming_mbtiholic.Main.MainActivity;
 import com.example.mobileprogramming_mbtiholic.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.example.mobileprogramming_mbtiholic.domain.entity.User;
-
-import org.w3c.dom.Text;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
 
 public class mySetting extends AppCompatActivity {
-    private FirebaseAuth mAuth ;
-
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mysetting);
-
+        setContentView(R.layout.mysetting);
         //액션바 배경색 변경
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF339999));
         //홈버튼 표시
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         //뒤로가기 버튼
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
         setTitle("내 정보");
+
 
         ImageView image1_myMBTIimage = (ImageView) findViewById(R.id.image1_myMBTIimage);
         TextView tv2_myID = (TextView) findViewById(R.id.tv2_myID);
@@ -51,6 +49,25 @@ public class mySetting extends AppCompatActivity {
         final Button btn2_logoutBtn = (Button) findViewById(R.id.btn2_logoutBtn);
         final Button btn2_withDrawBtn= (Button) findViewById(R.id.btn2_withDrawBtn);
 
+        //파이어베이스 현재 구글로그인한 사용자 정보 가져오기
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            for (UserInfo profile : user.getProviderData()) {
+                // Id of the provider (ex: google.com)
+                String providerId = profile.getProviderId();
+
+                // UID specific to the provider
+                String uid = profile.getUid();
+
+                // Name, email address, and profile photo Url
+                String name = profile.getDisplayName();
+                String email = profile.getEmail();
+                Uri photoUrl = profile.getPhotoUrl();
+                tv3_myName.setText(name);
+                tv2_myID.setText(email);
+                image1_myMBTIimage.setImageURI(photoUrl);
+            }
+        }
         Spinner mbtiSpinner = (Spinner) findViewById(R.id.mbtiSpinner);
         ArrayAdapter mbtiAdapter = ArrayAdapter.createFromResource(this, R.array.mbti_type, android.R.layout.simple_spinner_item);
         mbtiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -221,9 +238,17 @@ public class mySetting extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Toast.makeText(mySetting.this, "탈퇴되셨습니다. 앱을 종료 후 다시 실행시켜주십시오.", Toast.LENGTH_SHORT).show();;
 
-                        revokeAccess(); // 파이어베이스 로그아웃 구현
-                        System.runFinalizersOnExit(true);
-                        System.exit(0);
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                        user.delete()
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(mySetting.this, "정상적으로 탈퇴가 진행되었습니다.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
 
                     }
                 });
@@ -237,6 +262,7 @@ public class mySetting extends AppCompatActivity {
             }
         });
     }
+
 
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
