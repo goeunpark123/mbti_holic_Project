@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login);
         mAuth= FirebaseAuth.getInstance();
 
         // Configure Google Sign In
@@ -55,6 +55,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         });
     }
 
+    private void signIn() { //
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -89,7 +93,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                             
                             user.child("name").setValue("덕복희");
 
-                            Intent intent = new Intent(LoginActivity.this, MainTabActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MainTabActivity.class); //로그인 성공적으로 완료하면 메인화면으로 전환
                             LoginActivity.this.startActivity(intent);
                             LoginActivity.this.finish();
                         } else {
@@ -104,6 +108,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private void signOut() {
         FirebaseAuth.getInstance().signOut();
     }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 

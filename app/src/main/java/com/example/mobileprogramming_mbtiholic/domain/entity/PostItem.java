@@ -1,12 +1,12 @@
 package com.example.mobileprogramming_mbtiholic.domain.entity;
 
-public class PostBundle {
+public class PostItem {
     private String id;
     private String name;
     private String explain;
     //유저랑 즐겨찾기 관련해서 뭔가가 필요함
 
-    public  PostBundle(){}
+    public PostItem(){}
 
     public String getId() {
         return id;
