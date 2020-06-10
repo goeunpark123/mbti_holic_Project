@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textStyle ="bold"
+        android:textColor ="#5b5f7a"
         android:text="ENFJ"
         android:textSize="50sp">
     </TextView>
@@ -44,12 +46,26 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="50dp"
+                        android:textSize="30dp"
+                        android:textColor="#787EA4"
+                        android:textStyle="bold"
+                        android:text="정의로운 사회운동가"
+                       />
+
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="500dp"
+                        android:layout_height="400dp"
                         android:gravity="center"
-                        android:padding="8dp"
-                        android:text="@string/enfj_i" />
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingMultiplier="1.5"
+                        android:text="@string/enfj_i"
+                        />
                 </LinearLayout>
 
                 <!-- 직업 페이지  -->
@@ -66,6 +82,7 @@
                         android:gravity="center"
                         android:padding="8dp"
                         android:scrollbars="vertical"
+                        android:textColor = "#000000"
                         android:text="@string/enfj_c" />
                 </LinearLayout>
             </FrameLayout>

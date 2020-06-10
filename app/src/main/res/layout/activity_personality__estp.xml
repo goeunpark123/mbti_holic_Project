@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textStyle ="bold"
+        android:textColor ="#ABA4D3"
         android:text="ESTP"
         android:textSize="50sp">
     </TextView>
@@ -46,9 +48,23 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="500dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="30dp"
+                        android:textSize="30dp"
+                        android:textColor="#787EA4"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:lineSpacingMultiplier="1.1"
+                        android:text="모험을 즐기는 사업가"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
                         android:gravity="center"
-                        android:padding="8dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingMultiplier="1.7"
                         android:text="@string/estp_i" />
                 </LinearLayout>
 
@@ -65,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="8dp"
-                        android:scrollbars="vertical"
+                        android:textColor = "#000000"
                         android:text="@string/estp_c" />
                 </LinearLayout>
             </FrameLayout>

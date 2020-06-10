@@ -20,6 +20,7 @@ import androidx.core.app.ActivityCompat;
 import com.example.mobileprogramming_mbtiholic.Main.MainActivity;
 import com.example.mobileprogramming_mbtiholic.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.example.mobileprogramming_mbtiholic.domain.entity.User;
 
 import org.w3c.dom.Text;
 
@@ -54,6 +55,135 @@ public class mySetting extends AppCompatActivity {
         ArrayAdapter mbtiAdapter = ArrayAdapter.createFromResource(this, R.array.mbti_type, android.R.layout.simple_spinner_item);
         mbtiAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mbtiSpinner.setAdapter(mbtiAdapter);
+
+        mbtiSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                User user = new User();
+                switch(i) {
+                    case 0:
+                        user.setMbti("ISTJ");
+                        String str = user.getMbti();
+                        if(user.getMbti() == "ISTJ")
+                            Toast.makeText(mySetting.this, "mbti가 ISTJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        user.setMbti("ISFJ");
+                        if(user.getMbti() == "ISFJ")
+                            Toast.makeText(mySetting.this, "mbti가 ISFJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+                        user.setMbti("INFJ");
+                        if(user.getMbti() == "INFJ")
+                            Toast.makeText(mySetting.this, "mbti가 INFJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 3:
+                        user.setMbti("INTJ");
+                        if(user.getMbti() == "INTJ")
+                            Toast.makeText(mySetting.this, "mbti가 INTJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 4:
+                        user.setMbti("ISTP");
+                        if(user.getMbti() == "ISTP")
+                            Toast.makeText(mySetting.this, "mbti가 ISTP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 5:
+                        user.setMbti("ISFP");
+                        if(user.getMbti() == "ISFP")
+                            Toast.makeText(mySetting.this, "mbti가 ISFP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 6:
+                        user.setMbti("INFP");
+                        if(user.getMbti() == "INFP")
+                            Toast.makeText(mySetting.this, "mbti가 INFP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 7:
+                        user.setMbti("INTP");
+                        if(user.getMbti() == "INTP")
+                            Toast.makeText(mySetting.this, "mbti가 INTP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 8:
+                        user.setMbti("ESTP");
+                        if(user.getMbti() == "ESTP")
+                            Toast.makeText(mySetting.this, "mbti가 ESTP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 9:
+                        user.setMbti("ESFP");
+                        if(user.getMbti() == "ESFP")
+                            Toast.makeText(mySetting.this, "mbti가 ESFP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 10:
+                        user.setMbti("ENFP");
+                        if(user.getMbti() == "ENFP")
+                            Toast.makeText(mySetting.this, "mbti가 ENFP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 11:
+                        user.setMbti("ENTP");
+                        if(user.getMbti() == "ENTP")
+                            Toast.makeText(mySetting.this, "mbti가 ENTP로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 12:
+                        user.setMbti("ESTJ");
+                        if(user.getMbti() == "ESTJ")
+                            Toast.makeText(mySetting.this, "mbti가 ESTJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 13:
+                        user.setMbti("ESFJ");
+                        if(user.getMbti() == "ESFJ")
+                            Toast.makeText(mySetting.this, "mbti가 ESFJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 14:
+                        user.setMbti("ENFJ");
+                        if(user.getMbti() == "ENFJ")
+                            Toast.makeText(mySetting.this, "mbti가 ENFJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 15:
+                        user.setMbti("ENTJ");
+                        if(user.getMbti() == "ENTJ")
+                            Toast.makeText(mySetting.this, "mbti가 ENTJ로 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(mySetting.this, "오류발생. 다시 시도해주세요.", Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         btn2_logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
