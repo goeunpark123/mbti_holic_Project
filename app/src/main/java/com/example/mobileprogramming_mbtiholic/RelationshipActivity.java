@@ -30,6 +30,7 @@ public class RelationshipActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        //액티비티 간의 넘겨준 데이터를 받음
         Intent intent = getIntent();
         int relationResult = intent.getExtras().getInt("relationResult");
 
@@ -37,9 +38,7 @@ public class RelationshipActivity extends AppCompatActivity {
         text1 = (TextView)findViewById(R.id.text1);
         text2 = (TextView)findViewById(R.id.text2);
 
-        int num = rand.nextInt(4);
-
-        // 난수 생성 코드
+        //case4만들기
         switch (relationResult) {
             case 0:
                 text1.setText(" 25% ");

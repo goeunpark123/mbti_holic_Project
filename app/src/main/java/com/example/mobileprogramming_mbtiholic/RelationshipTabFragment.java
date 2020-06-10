@@ -36,6 +36,7 @@ public class RelationshipTabFragment extends Fragment {
                 String result2 = spinner2.getSelectedItem().toString();
                 int relationResult = 0;
 
+                //if문 작성
                 if(result1.equals("istj")&&result2.equals("istj"))
                     relationResult = 0;
 
