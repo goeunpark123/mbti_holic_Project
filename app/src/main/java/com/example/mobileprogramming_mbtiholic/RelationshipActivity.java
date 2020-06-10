@@ -18,8 +18,7 @@ import java.util.Random;
 
 public class RelationshipActivity extends AppCompatActivity {
 
-    TextView text1, text2, mbtiText1, mbtiText2;
-    Random rand = new Random();
+    TextView text1, text2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,19 +39,25 @@ public class RelationshipActivity extends AppCompatActivity {
 
         //case4만들기
         switch (relationResult) {
-            case 0:
+            case 1:
+                text1.setText(" 00% ");
+                text2.setText(" 궁합 최악! 서로 많이 노력해보아요 ");
+                break;
+            case 2:
                 text1.setText(" 25% ");
                 text2.setText(" 잘 안맞는 관계! 서로가 서로에게 더 많이 배려해주세요. ");
                 break;
-            case 1:
+
+            case 3:
                 text1.setText(" 50% ");
                 text2.setText(" 반반관계! 잘 맞지도, 안 맞지도 않는 비즈니스 관계 ");
                 break;
-            case 2:
+
+            case 4:
                 text1.setText(" 75% ");
                 text2.setText(" 좋은관계! 좋은 친구가 될 수 있는 우호적인 관계 ");
                 break;
-            case 3:
+            case 5:
                 text1.setText(" 100% ");
                 text2.setText(" 만나자마자 짱친! 뭘하던 친구가 되는 최고의 관계 ");
                 break;
