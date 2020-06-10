@@ -2,7 +2,9 @@ package com.example.mobileprogramming_mbtiholic;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.mobileprogramming_mbtiholic.RelationshipTabFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
@@ -28,6 +30,9 @@ public class RelationshipActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        Intent intent = getIntent();
+        int relationResult = intent.getExtras().getInt("relationResult");
+
         Button backBtn = (Button)findViewById(R.id.backBtn);
         text1 = (TextView)findViewById(R.id.text1);
         text2 = (TextView)findViewById(R.id.text2);
@@ -35,7 +40,7 @@ public class RelationshipActivity extends AppCompatActivity {
         int num = rand.nextInt(4);
 
         // 난수 생성 코드
-        switch (num) {
+        switch (relationResult) {
             case 0:
                 text1.setText(" 25% ");
                 text2.setText(" 잘 안맞는 관계! 서로가 서로에게 더 많이 배려해주세요. ");
