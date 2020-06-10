@@ -29,7 +29,7 @@ public class MessageTabFragment extends Fragment { //덤인데이터
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_message, container, false); // 전체 뷰를 가져옴
+        View view = inflater.inflate(R.layout.message, container, false); // 전체 뷰를 가져옴
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView); //리사이클러뷰 선어
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity()); // 이 두줄 무조건 쓰고 넘어가야 됨(복붙해서 사용)
@@ -66,11 +66,11 @@ public class MessageTabFragment extends Fragment { //덤인데이터
         // 임의의 데이터입니다.
 
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 1; i < 5; i++) {
             // 각 List의 값들을 data 객체에 set 해줍니다. 이게 핵심이다. 위에 코드 쓰레기 지움
             Data data = new Data();
             data.setTitle("알림");
-            data.setContent("알림 내용 "+i);
+            data.setContent("내가 쓴 글에 좋아요가 달렸습니다 "+i);
             data.setResId(R.drawable.message); // 이걸 i가 아닌 0으로 해주면 서로 숫자 안맞아도.. 데이터 출력 가능...
 
             // 각 값이 들어간 data를 adapter에 추가합니다.
