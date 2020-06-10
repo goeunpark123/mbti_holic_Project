@@ -6,16 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".PersonalityMBTI.personality_ENFJ">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/secondRelelativeLayout"
         android:background="@drawable/mysetting_layoutborder"
-        android:paddingBottom="20dp"
-        android:paddingLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:padding="20dp"
+        android:layout_margin="20dp">
 
         <ImageView
             android:id="@+id/image1_myMBTIimage"

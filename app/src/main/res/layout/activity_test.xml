@@ -3,20 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="나는 과연 어떤 유형일까?"
-        android:textColor="#787EA4"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
-
+        android:background="@color/purple">
+        <TextView
+            android:id="@+id/idTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:text="MBTI 검사"
+            android:textSize="20dp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
