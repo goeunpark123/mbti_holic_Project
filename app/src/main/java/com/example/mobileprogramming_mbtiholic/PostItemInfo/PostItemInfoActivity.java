@@ -124,9 +124,9 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
             }
         });
 
-        replyList.add(new Reply());
-        replyList.add(new Reply());
-        replyList.add(new Reply());
+        //replyList.add(new Reply()); 댓글 더미데이터 출력 주석처리
+        //replyList.add(new Reply());
+        //replyList.add(new Reply());
 
         recyclerViewAdapter.notifyDataSetChanged();
         swipeRefreshLayout.setRefreshing(false);

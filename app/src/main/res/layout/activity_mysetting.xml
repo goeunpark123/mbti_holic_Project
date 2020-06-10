@@ -26,7 +26,6 @@
             android:id="@+id/tv2_myID"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="id001"
             android:layout_marginTop="30sp"
             android:layout_marginLeft="120dp" />
 
@@ -36,8 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv2_myID"
             android:layout_marginLeft="120dp"
-            android:layout_marginTop="10dp"
-            android:text="김나경" />
+            android:layout_marginTop="10dp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -70,6 +68,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="로그아웃"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="#ffffff"
+            />
+        <Button
+            android:id="@+id/btn2_withDrawBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="탈퇴하기"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:background="#ffffff"
