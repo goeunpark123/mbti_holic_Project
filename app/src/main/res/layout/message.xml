@@ -16,7 +16,7 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:layout_margin="10dp"
-            android:text="알림"
+            android:text="MBTI 자세히 알기"
             android:textSize="20dp"
             android:textStyle="bold"></TextView>
     </RelativeLayout>
