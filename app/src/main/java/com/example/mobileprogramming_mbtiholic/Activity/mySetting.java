@@ -33,7 +33,7 @@ public class mySetting extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mysetting);
         //액션바 배경색 변경
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF339999));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFDFC8F8));
         //홈버튼 표시
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //뒤로가기 버튼
