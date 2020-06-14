@@ -2,8 +2,10 @@ package com.example.mobileprogramming_mbtiholic.PersonalityMBTI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -30,5 +32,26 @@ public class personality_ISFP extends AppCompatActivity {
         tabHost1.addTab(ts2);
         TextView s_career = (TextView)findViewById(R.id.isfp_직업2);
         s_career.setMovementMethod(new ScrollingMovementMethod());
+
+        // 액션과 관련 코드 시작
+        getSupportActionBar().setTitle("MBTI 16가지 유형");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //액션바 배경색 변경
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFDFC8F8)); //0xFFECE0F8
+        //홈버튼 표시
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //뒤로가기 버튼
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+// 액션과 관련 코드 끝
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

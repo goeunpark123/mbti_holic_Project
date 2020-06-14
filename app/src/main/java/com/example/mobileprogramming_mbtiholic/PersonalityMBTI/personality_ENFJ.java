@@ -2,8 +2,10 @@ package com.example.mobileprogramming_mbtiholic.PersonalityMBTI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -21,8 +23,19 @@ public class personality_ENFJ extends AppCompatActivity {
 
         TabHost.TabSpec ts1 = tabHost1.newTabSpec("Tab Spec 1");
         ts1.setContent(R.id.enfj_성격);
-        ;       ts1.setIndicator("성격");
+        ts1.setIndicator("성격");
         tabHost1.addTab(ts1);
+
+// 액션과 관련 코드 시작
+        getSupportActionBar().setTitle("MBTI 16가지 유형");
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //액션바 배경색 변경
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFDFC8F8)); //0xFFECE0F8
+        //홈버튼 표시
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //뒤로가기 버튼
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+// 액션과 관련 코드 끝
 
         TabHost.TabSpec ts2 = tabHost1.newTabSpec("Tab Spec 2");
         ts2.setContent(R.id.enfj_직업);
@@ -31,4 +44,16 @@ public class personality_ENFJ extends AppCompatActivity {
         TextView s_career = (TextView)findViewById(R.id.enfj_직업2);
         s_career.setMovementMethod(new ScrollingMovementMethod());
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
