@@ -25,6 +25,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.LinkedList;
 import java.util.List;
 
+import static com.example.mobileprogramming_mbtiholic.PostItemList.PostItemListActivity.EXTRA_POST_NAME;
+
 public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener, PostItemInfoRecyclerViewAdapter.OnPostLikeClickListener, PostItemInfoRecyclerViewAdapter.OnReplyLikeClickListener, PostItemInfoRecyclerViewAdapter.OnReplyMenuClickListener {
     // views
     private SwipeRefreshLayout swipeRefreshLayout;
@@ -45,11 +47,12 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         //액션바 배경색 변경
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFEC0CF));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFDFC8F8));
         //홈버튼 표시
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //뒤로가기 버튼
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+       // getSupportActionBar().setTitle(EXTRA_POST_ID);
 
         postBundleId = getIntent().getStringExtra(EXTRA_POST_BUNDLE_ID);
         postId = getIntent().getStringExtra(EXTRA_POST_ID);
@@ -59,7 +62,7 @@ public class PostItemInfoActivity extends AppCompatActivity implements SwipeRefr
             finish();
             return;
         }
-        setTitle("");
+        setTitle("게시글");
 
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(this);
