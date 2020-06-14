@@ -45,7 +45,7 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
         setContentView(R.layout.post_item_list);
 
         //액션바 배경색 변경
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFEC0CF));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFDFC8F8));
         //홈버튼 표시
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -94,9 +94,9 @@ public class PostItemListActivity extends AppCompatActivity implements SwipeRefr
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()) {
-            case R.id.action_search:
-                Toast.makeText(this, "검색 클릭", Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.action_search:
+//                Toast.makeText(this, "검색 클릭", Toast.LENGTH_SHORT).show();
+//                break;
             case R.id.action_post_write:
                 Intent intent = new Intent(this, PostItemWritingActivity.class);
                 intent.putExtra(PostItemWritingActivity.EXTRA_POST_BUNDLE_ID, postBundleId);

@@ -56,7 +56,7 @@ public class PostItemListRecyclerViewAdapter extends RecyclerView.Adapter<PostIt
 
             timeTextView = itemView.findViewById(R.id.timeTextView);
             contentTextView = itemView.findViewById(R.id.contentTextView);
-            likeCountTextView = itemView.findViewById(R.id.likeCountTextView);
+           // likeCountTextView = itemView.findViewById(R.id.likeCountTextView);
            // replyCountTextView = itemView.findViewById(R.id.replyCountTextView);
 
             itemView.setOnClickListener(new View.OnClickListener() {
