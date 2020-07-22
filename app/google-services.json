@@ -15,13 +15,95 @@
       },
       "oauth_client": [
         {
-          "client_id": "127818012396-4td4vnvp4q1tkca4vs067nh1l0mcmjhq.apps.googleusercontent.com",
+          "client_id": "127818012396-e8ptgbdiocp3ivrl0h0p90t3feen6krt.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.mobileprogramming_mbtiholic",
-            "certificate_hash": "7c849992c81a89a8c44dcc8ec0a8ca9ed5c085a2"
+            "certificate_hash": "2149293693919c9f60098ceb20f04b06fca25164"
           }
         },
+        {
+          "client_id": "127818012396-l11rghbvg9egjkoocol6c57ck8994o54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mobileprogramming_mbtiholic",
+            "certificate_hash": "a8b019e9bba7d3012e973cc3c0237d43996adf3a"
+          }
+        },
+        {
+          "client_id": "127818012396-e9m78883ul7tjtr9eatvf989jftp92ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkO9sCfhnj9ty2Ju2j5hbvyUgMzQeF20Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127818012396-e9m78883ul7tjtr9eatvf989jftp92ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127818012396:android:136f2e867dc7dbadadb7c9",
+        "android_client_info": {
+          "package_name": "com.mbtiholic.mobileprogramming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127818012396-fn0ng1fp7r8bo5n4s0dfneigq8bsth54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mbtiholic.mobileprogramming",
+            "certificate_hash": "2149293693919c9f60098ceb20f04b06fca25164"
+          }
+        },
+        {
+          "client_id": "127818012396-blfghoiossv4t00c4r80m4j942l4397h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mbtiholic.mobileprogramming",
+            "certificate_hash": "a8b019e9bba7d3012e973cc3c0237d43996adf3a"
+          }
+        },
+        {
+          "client_id": "127818012396-e9m78883ul7tjtr9eatvf989jftp92ap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkO9sCfhnj9ty2Ju2j5hbvyUgMzQeF20Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127818012396-e9m78883ul7tjtr9eatvf989jftp92ap.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127818012396:android:13e2ff6294c55263adb7c9",
+        "android_client_info": {
+          "package_name": "com.mbtiholic.mobileprogramming_mbtiholic"
+        }
+      },
+      "oauth_client": [
         {
           "client_id": "127818012396-e9m78883ul7tjtr9eatvf989jftp92ap.apps.googleusercontent.com",
           "client_type": 3

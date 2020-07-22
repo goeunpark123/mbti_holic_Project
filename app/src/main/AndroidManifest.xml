@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.mobileprogramming_mbtiholic">
+    package="com.mbtiholic.mobileprogramming_mbtiholic">
     <uses-sdk tools:overrideLibrary="com.google.firebase.auth"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
-        android:name=".AppAplication"
+        android:name="com.mbtiholic.mobileprogramming_mbtiholic.AppAplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -14,64 +14,64 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--이렇게 옮긴다.-->
-        <activity android:name=".Main.MainTabActivity"> </activity>
-        <activity android:name=".Main.MainActivity">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.Main.MainTabActivity"> </activity>
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.Main.MainActivity">
         </activity>
-        <activity android:name=".Activity.mySetting">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.Activity.mySetting">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ENFJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ENFJ">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ENTJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ENTJ">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ENTP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ENTP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ESFP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ESFP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ESTJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ESTJ">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ESTP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ESTP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_INFJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_INFJ">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_INFP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_INFP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_INTJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_INTJ">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_INTP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_INTP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ISFJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISFJ">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ISFP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISFP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ISTP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISTP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ENFP">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ENFP">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ESFJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ESFJ">
         </activity>
-        <activity android:name=".PersonalityMBTI.personality_ISTJ">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PersonalityMBTI.personality_ISTJ">
         </activity>
-        <activity android:name=".RelationshipActivity">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.RelationshipActivity">
         </activity>
-        <activity android:name=".PostPage.PostSpecifiy">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PostPage.PostSpecifiy">
         </activity>
-        <activity android:name=".PostItemList.PostItemListActivity" />
-        <activity android:name=".PostItemInfo.PostItemInfoActivity" />
-        <activity android:name=".Login.LoginActivity">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PostItemList.PostItemListActivity" />
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PostItemInfo.PostItemInfoActivity" />
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.Login.LoginActivity">
         </activity>
-        <activity android:name=".Loading.LoadingActivity">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.Loading.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PostItemList.PostItemWritingActivity">
+        <activity android:name="com.mbtiholic.mobileprogramming_mbtiholic.PostItemList.PostItemWritingActivity">
         </activity>
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id"/>
         <service
-            android:name=".MyFirebaseMessagingService">
+            android:name="com.mbtiholic.mobileprogramming_mbtiholic.MyFirebaseMessagingService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
